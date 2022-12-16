@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body class="body">
+    <style>
+        *{
+    padding: 0;
+    margin: 0;
+}
+body{
+    z-index: 0;
+}
+.pages{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction:column;
+    width: 100%;
+    
+}
+.page1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: orangered;
+    font-size: 50px;
+    color: black;
+    height: 900px;
+    width: 100%; 
+}
+.page2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: blue;
+    font-size: 50px;
+    color: black;
+    height: 900px;
+    width: 100%; 
+}
+.page3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: green;
+    font-size: 50px;
+    color: black;
+    height: 900px;
+    width: 100%; 
+}
+/* menu */
+.menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+.sous-menu{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 110px;
+    width: 100%;
+    background: rgba(20, 20, 20, 0.2);
+    position: fixed;
+    top: 87%;   
+    box-shadow: 0.4px 0.4px 0.2em black;
+}
+
+/* mysticky */
+.mysticky{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 250px;
+}
+.sticky{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 7px;
+}
+.spansticky{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10px;
+    height: 10px;
+}
+.btnsticky{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 42px;
+    width: 42px;
+    border: 2.5px solid black;
+    border-radius: 50px;
+}
+    </style>
+    <!--  -->
+    <!--  -->
+    <div class="pages">
+        <div class="page1">Accueille </div>
+        <div class="page2">Services</div>
+        <div class="page3">Contacte</div>
+    </div>
+
+    <!-- boutons d'acces rapide -->
+    <div class="mysticky">
+        <div class="sticky">
+            <div class="btnsticky" id="red"><img src="https://img.icons8.com/ios-filled/35/null/home.png"/></div>
+            <span class="spansticky"></span>
+            <div class="btnsticky" id="blue"><img src="https://img.icons8.com/ios-filled/35/null/service.png"/></div>
+            <span class="spansticky"></span>
+            <div class="btnsticky" id="green"><img src="https://img.icons8.com/ios-filled/35/null/checked-user-male.png"/></div>
+        </div>
+    </div>
+
+    <!-- menu -->
+    <div class="menu">
+        <div class="sous-menu">
+            <div class="icon"><img src="https://img.icons8.com/ios-filled/40/ffffff/bulleted-list.png"/></div>
+            <div class="icon"><img src="https://img.icons8.com/ios-filled/70/ffffff/centralized-network.png"/></div>
+            <div class="icon"><img src="https://img.icons8.com/ios-filled/40/ffffff/messaging-.png"/></div>
+        </div>
+    </div>
+    <script>
+        // mon code js
+const myGreen = document.getElementById("green");
+const myRed = document.getElementById("red");
+const myBlue = document.getElementById("blue");
+
+myGreen.addEventListener("click",()=>{
+myGreen.style.transform = "scale(1.2, 1.2)";
+myGreen.style.boxShadow = "inset 1px 1px 2em white, 1px 1px 2em black";
+myRed.style.transform = "scale(1, 1)";
+myRed.style.boxShadow = "None";
+myBlue.style.transform = "scale(1, 1)";
+myBlue.style.boxShadow = "None";
+window.scroll({
+    top:1800,
+    behavior:'smooth'
+})
+});
+
+myRed.addEventListener("click",()=>{
+myRed.style.transform = "scale(1.2, 1.2)";
+myRed.style.boxShadow = "inset 1px 1px 2em white, 1px 1px 2em black";
+myGreen.style.transform = "scale(1, 1)";
+myGreen.style.boxShadow = "none";
+myBlue.style.transform = "scale(1, 1)";
+myBlue.style.boxShadow = "None";
+    window.scroll({
+        top:0,
+        behavior:'smooth'
+    })
+});
+    
+myBlue.addEventListener("click",()=>{
+myBlue.style.transform = "scale(1.2, 1.2)";
+myBlue.style.boxShadow = "inset 1px 1px 2em white, 1px 1px 2em black";
+myGreen.style.transform = "scale(1, 1)";
+myGreen.style.boxShadow = "none";
+myRed.style.transform = "scale(1, 1)";
+myRed.style.boxShadow = "None";
+window.scroll({
+        top:900,
+        behavior:'smooth'
+    })
+});
+    </script>
+    <script src="code.js"></script>
+</body>
+</html>
